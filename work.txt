@@ -7,5 +7,19 @@
 
 二、
 常见命令
-git status 查看仓库工作区状态，文件有无被修改过
-git diff <‘flie’> 查看版本更改内容
+git status 查看仓库工作区状态，文件有无被修改过.
+git diff <‘flie’> 查看版本更改内容.
+
+三、
+版本回退
+1：git log 查看历史记录.
+2：git log --pretty=oneline 查看历史纪录，不用看的眼花缭乱.
+3：git reset --hard head^ 返回上一个版本（上上个版本是head^^,当然往上100个版本写100个^比较容易数不过来，所以写成head~100）.
+4: git reset --hard commit id 只要上面的命令行窗口还没有被关掉，你就可以顺着往上找到指定回到未来的某个版本.
+5:git reflog 记录你的每一次命令，找不到commit id也不用慌，用这个command.
+
+HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令git reset --hard commit_id。
+
+穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
+
+要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
