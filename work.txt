@@ -88,3 +88,6 @@ Git鼓励大量使用分支：
 
 另一种方式是用git stash pop，恢复的同时把stash内容也删了
 4.再用git stash list查看，就看不到任何stash内容了
+
+十二、
+1.如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除。
