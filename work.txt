@@ -104,3 +104,7 @@ Git鼓励大量使用分支：
 建立本地分支和远程分支的关联，使用git branch --set-upstream-to=origin/<branch> dev；
 
 从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+
+十四、
+git pull 地址      从版本库里更新本地代码
+git add .          添加所有新文件
