@@ -1,0 +1,50 @@
+{include file="public/header"}
+
+<div class="container clearfix">
+    {include file="public/left"}
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin">首页</a><span class="crumb-step">&gt;</span><span class="crumb-name">作品管理</span></div>
+        </div>
+        
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="/index.php/Admin/Category/add"><i class="icon-font"></i>新增分类</a>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th>ID</th>
+                            <th>分类名称</th>
+                            <th>父类ID</th>
+                            <th>操作</th>
+                        </tr>
+                        {volist name='cate' id='category'}
+                            <tr>
+                                <td>{$category.id}</td>
+                                {if ($category.level==0)}
+                                    <td style="font-weight:bold;font-size:15pt;">{$category.c_name}</td>
+                                {else /}
+                                    <td>{php}echo str_repeat('--',$category['level']*2),$category['c_name']{/php}</td>
+                                {/if}
+                                <td>{$category.c_parent_id}</td>
+                                <td>
+                                    <a class="link-update" href="/index.php/Admin/Category/edit?name={$category.c_name}">修改</a>
+                                    <a class="link-del" href="/index.php/Admin/Category/delete?name={$category.c_name}" onclick="return del();">删除</a>
+                                </td>
+                            </tr>
+                        {/volist}
+                    </table>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8"/>
+    <link rel="stylesheet" href="/public/css/style.css">
+    <script src="/public/js/jquery.min.js"></script>
+    <link rel="shortcut icon" href="http://yispace.net/wp-content/themes/weiweiqi/img/favicon.ico"/>
+    <title>{block name="title"}美文网_美文欣赏{/block}</title>
+
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+    </style>
+    <link rel='https://api.w.org/' href='http://yispace.net/wp-json/'/>
+    <meta name="keywords" content="意空间,美文阅读,情感美文,励志生活,生活感悟"/>
+    <meta name="description"
+          content="意空间青春励志文章阅读网为读者奉献青春励志人生哲理文章故事阅读，励志的文章大全，青春励志语录名言，青春励志短文阅读，励志的故事欣赏阅读，提升思想意境，阅读改变思想。"/>
+
+</head>
+
+<body class="home blog">
+{block name="menu"}
+{include file="public/header" /}
+<div class="topbar">
+    <div class="inner">
+        <ul class="nav">
+            <li id="menu-item-180" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-180"><a
+                    title="人生哲理_人生哲理相关文章_有关生活哲理语录句子" href="http://yispace.net/category/philosophy-life">人生哲理</a></li>
+            <li id="menu-item-126" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-126"><a
+                    title="励志文章_励志相关文章_励志相关句子语录" href="http://yispace.net/category/inspirational-life">励志文章</a></li>
+            <li id="menu-item-489" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-489"><a
+                    title="情感美文_情感美文相关文章阅读_情感语录句子大全" href="http://yispace.net/category/youth-campus">情感美文</a></li>
+            <li id="menu-item-143" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-143"><a
+                    title="经典美文摘抄_经典美文美句摘抄_经典美文欣赏" href="http://yispace.net/category/spiritual-journey">经典美文</a></li>
+            <li id="menu-item-137" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-137"><a
+                    title="爱情文章_爱情故事_爱情日记_爱情散文美文" href="http://yispace.net/category/affection-sentiment">爱情文章</a></li>
+            <li id="menu-item-2323" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2323">
+                <a title="人生感悟_人生感悟相关文章_人生感悟相关语录句子" href="http://yispace.net/category/perception-life">人生感悟</a></li>
+            <li id="menu-item-14649"
+                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14649"><a
+                    title="经典语录语句_爱情经典语录_经典励志语录语句大全" href="http://yispace.net/category/jingdianyulu">经典语录</a></li>
+            <li id="menu-item-31436"
+                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-31436"><a
+                    title="心情说说_心情随笔_心情短语_心情日记大全" href="http://yispace.net/category/good-books">心情说说</a></li>
+            <li id="menu-item-31768"
+                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-31768"><a
+                    title="散文精选_优美散文阅读_经典散文随笔_抒情散文吧" href="http://yispace.net/category/renwen">散文精选</a></li>
+        </ul>
+
+        <ul class="nav topmenu">
+            <li id="menu-item-12460" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12460"><a
+                    href="http://yispace.net/contact">关于本站</a></li>
+            <?php if(empty(session("user"))):?>
+            <li id="menu-item-12460" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12460"><a
+                    href="/index.php/Home/User/login">登录</a></li>
+            <li id="menu-item-12460" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12460"><a
+                    href="/index.php/Home/User/register">注册</a></li>
+            <?php else:?>
+            <li id="menu-item-12460" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12460"><a
+                    href="">欢迎&nbsp;&nbsp;<?php echo session("user");?></a></li>
+            <li id="menu-item-12460" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-12460"><a
+                    href="/index.php/Home/User/logout">注销</a></li>
+            <?php endif;?>
+        </ul>
+    </div>
+</div>
+{/block}
+{block name="main"} {/block}
+{block name="footer"} {/block}
+</body>
+</html>

@@ -1,0 +1,135 @@
+{extend name="base" /}
+
+{block name="title"}姜文网{/block}
+
+{block name="main"}
+<div class="wrapper">
+    <div class="content">
+        <!-- 分享代码 -->
+        <div class="baidufenxiang" style="overflow:auto;margin-bottom:10px"><!-- Baidu Button BEGIN -->
+            <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+            </div>
+            <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=53164"></script>
+            <script type="text/javascript" id="bdshell_js"></script>
+            <script type="text/javascript">
+                document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date() / 3600000)
+            </script>
+            <!-- Baidu Button END --></div><!-- 分享代码 -->
+
+        <ul class="excerpt thumb">
+            <volist name="list" id="vo">
+                <li>
+
+                </li>
+            </volist>
+        </ul>
+    </div>
+    <div class="sidebar">
+        <div class="widget widget_categories"><h3 class="widget-tit">文章分类</h3>
+            <ul>
+                <li class="cat-item cat-item-18"><a href="http://yispace.net/category/philosophy-life"
+                                                    title="人生哲理栏目为广大网友奉献人生哲理名言，人生哲理故事，人生哲理文章，哲理名人名言名录大全。">人生哲理_人生哲理文章阅读_人生哲理语录句子大全</a>
+                </li>
+                <li class="cat-item cat-item-795"><a href="http://yispace.net/category/perception-life"
+                                                     title="人生感悟栏目为读者分享人生感悟日志、人生感悟的句子、人生感悟文章、人生感悟名言、人生感悟散文等一系列人生的感悟。">人生感悟文章散文_人生感悟的句子_人生感悟语录语句</a>
+                </li>
+                <li class="cat-item cat-item-25"><a href="http://yispace.net/category/network"
+                                                    title="意空间伤感说说栏目主要分享伤感的句子说说心情，心情不好的说说大全，伤感QQ说说大全，说说心情短语，qq说说心情短语，qq空间说说，爱情说说等各类说说。">伤感说说_伤感的句子说说心情_心情不好的说说心情短语</a>
+                </li>
+                <li class="cat-item cat-item-1"><a href="http://yispace.net/category/inspirational-life"
+                                                   title="励志文章栏目为网友倾心奉献励志名言大全，励志的句子，名人励志人生故事，励志经典语录，励志经典语句等励志资料大全，读励志文章，过励志人生。">励志文章_励志小故事_励志的句子_励志语录名言</a>
+                </li>
+                <li class="cat-item cat-item-119"><a href="http://yispace.net/category/workplace-life"
+                                                     title="意空间阅读网唯美的句子栏目为读者分享关于爱情的唯美句子，关于友情的唯美句子，唯美伤感的句子，唯美诗句，唯美语录，唯美文字，唯美爱情句子，唯美古风句子等，和唯美相关的句子语录。">唯美的句子_关于爱情的唯美句子_关于友情的唯美句子</a>
+                </li>
+                <li class="cat-item cat-item-1376"><a href="http://yispace.net/category/good-books"
+                                                      title="意空间心情栏目主要分享心情说说，心情随笔，心情短语，心情日志大全等，一切有关心情的文章和语录说说，心情不好怎么办，就看意空间心情说说。">心情说说_心情随笔_心情短语_心情日记大全</a>
+                </li>
+                <li class="cat-item cat-item-198"><a href="http://yispace.net/category/youth-campus"
+                                                     title="情感美文栏目为读者奉献青春情感故事，青春情感文章，青春情感语录，青春情感爱情故事，校园青春情感故事，让我们阅读美好的情感美文，记忆自己的青春情感历程。">情感美文文章_伤感美文散文阅读_情感语录句子</a>
+                </li>
+                <li class="cat-item cat-item-330"><a href="http://yispace.net/category/renwen"
+                                                     title="意空间阅读散文精选栏目主要分享散文精选文章，优美散文阅读，经典散文随笔，散文诗，伤感散文，短篇散文精选以及朱自清散文，余秋雨散文，林清玄散文集等各类名家精选散文。">散文精选_优美散文阅读_经典散文随笔_抒情散文吧</a>
+                </li>
+                <li class="cat-item cat-item-211"><a href="http://yispace.net/category/poetry"
+                                                     title="涨姿势吧，全民涨姿势，更涨知识，社会，爆料，八卦，没品新闻，美食，涨姿势科普，涨姿势福利社，每天阅读十分钟，姿势倍儿涨。">涨姿势吧_来这里涨点姿势吧_还可以更涨知识哦！</a>
+                </li>
+                <li class="cat-item cat-item-5"><a href="http://yispace.net/category/affection-sentiment"
+                                                   title="爱情文章栏目为广大网友奉献感动你我的家庭亲情文章、亲情故事，感动天地的人间爱情故事、爱情文章，让世间充满情充满爱，情爱遍人间。">爱情文章_爱情散文_爱情故事日记_爱情美文</a>
+                </li>
+                <li class="cat-item cat-item-19"><a href="http://yispace.net/category/spiritual-journey"
+                                                    title="经典美文为读者分享每个人的美好心情，美好心情日志，美好心情文章，美文欣赏，经典美文美句摘抄，让心情踏上快乐的美好心灵旅途，成为读者心中的心灵鸡汤。">经典美文摘抄_经典美文美句摘抄_经典美文欣赏</a>
+                </li>
+                <li class="cat-item cat-item-3770"><a href="http://yispace.net/category/jingdianyulu"
+                                                      title="经典语录栏目分享经典语录语句，经典句子，一句话经典语录，经典爱情语录，亲情爱情友情伤感语录句子，青春励志经典语录语句，经典励志语录句子大全，传递正能量，活出精彩生活。">经典语录句子_经典爱情语录_一句话经典语录语句大全</a>
+                </li>
+            </ul>
+        </div>
+        {assign name="var" value="最新发表" /}
+        <div class="widget widget_recent_entries"><h3 class="widget-tit">{$var}</h3>
+            <ul>
+                <li>
+                    <a href="http://yispace.net/42805.html">该去北上广哭，还是回小城市笑</a>
+                </li>
+                <li>
+                    <a href="http://yispace.net/42797.html">那些越想炫耀自己的人，往往生活过得越糟糕</a>
+                </li>
+                <li>
+                    <a href="http://yispace.net/42793.html">遇见这样的男人，赶紧分了吧！</a>
+                </li>
+                <li>
+                    <a href="http://yispace.net/42789.html">你会沟通吗？写得真好！</a>
+                </li>
+                <li>
+                    <a href="http://yispace.net/42801.html">我为什么不喜欢在朋友圈点赞了</a>
+                </li>
+                <li>
+                    <a href="http://yispace.net/42785.html">王宝强：你无法感同身受，就别劝我宽容大度</a>
+                </li>
+                <li>
+                    <a href="http://yispace.net/42781.html">马蓉和宋喆最有可能是什么下场？</a>
+                </li>
+                <li>
+                    <a href="http://yispace.net/42771.html">人生感悟：不懂得享受寂寞的人生是没有意义的</a>
+                </li>
+            </ul>
+        </div>
+        <div class="widget widget_links"><h3 class="widget-tit">友情链接</h3>
+            <ul class='xoxo blogroll'>
+                <li><a href="http://www.lomowo.com/" rel="friend" target="_blank">lomo窝</a></li>
+                <li><a href="http://www.youmeiwenzi.com/" rel="friend" target="_blank">优美文字</a></li>
+                <li><a href="http://www.cnlianxue.com/" rel="friend" target="_blank">励志文章</a></li>
+                <li><a href="http://bohaishibei.com/" rel="friend" target="_blank">博海拾贝</a></li>
+                <li><a href="http://www.haopic.me/" rel="friend" target="_blank">好图网</a></li>
+                <li><a href="http://www.zreading.cn/" rel="friend" target="_blank">左岸读书</a></li>
+                <li><a href="http://missever.com" rel="friend" target="_blank">思念往昔</a></li>
+                <li><a href="http://www.weiweiqi.com/" rel="friend" target="_blank">经典语录</a></li>
+                <li><a href="http://www.meiwen.com.cn/" rel="friend" target="_blank">美文网</a></li>
+                <li><a href="http://www.qingniantuzhai.com/" rel="friend" target="_blank">青年图摘</a></li>
+
+            </ul>
+        </div>
+    </div>
+</div>
+{/block}
+
+{block name="footer"}
+
+<div id="bottom">
+    <div id="bottom-content">
+        <div id="content-left">
+            <p> 网站位置 | 关于我们 | 意见反馈 |</p>
+        </div>
+        <div id="content-right">
+            <p>友情链接</p>
+            <p>PHP中文网  |  小猪CMS</p>
+            <p>公司网址：php.cn</p>
+        </div>
+    </div>
+</div>
+
+<script type='text/javascript' src='http://yispace.net/wp-includes/js/wp-embed.min.js?ver=4.5.2'></script>
+
+{/block}
+</body>
+</html>

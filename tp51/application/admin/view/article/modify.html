@@ -1,0 +1,53 @@
+{include file="public/header"}
+
+<div class="container clearfix">
+    {include file="public/left"}
+
+    <!--/sidebar-->
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">作品管理</a><span class="crumb-step">&gt;</span><span>新增作品</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="" method="post" role="form">
+                    <table class="insert-tab" width="100%">
+                        <tbody><tr>
+                            <th width="120"><i class="require-red">*</i>修改分类：</th>
+                            <td>
+                                <select name="cateid" id="catid" class="required">
+                                    <?php foreach($cate as $k=>$v):?>
+                                       
+                                        <option value="<?php echo $v['id'];?>">
+                                            <?php echo str_repeat('--',$v['level']*2),$v['c_name'];?>
+                                        </option>
+                                    <?php endforeach;?>
+                                </select>
+                            </td>
+                        </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>修改标题：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="title" size="50" value="{$title}" type="text">
+                                </td>
+                                <input class="common-text required" id="id" style="display:none;" name="id" size="50" value="{$id}" type="text">
+                            </tr>
+
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

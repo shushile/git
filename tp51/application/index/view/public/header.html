@@ -1,0 +1,79 @@
+<div class="top"> <span href="#" class="totop"></span>
+    <div class="wrap page-header">
+        <h1><a href="/" title="我的网站">我的网站</a></h1>
+        <span></span>
+    </div>
+    <div class="nav">
+        <div class="wrap zwrap">
+            <div class="navbar-header">
+                <li class="navbar-toggle"> <i class="fa fa-list fa-2x"></i> </li>
+                <li style="float:right;display:inline-block">
+                    <div class="toggle-search"><i class="fa fa-search fa-2x"></i></div>
+                </li>
+                <li style="float:right;">
+                    <div class="search-expand">
+                        <div class="search-expand-inner">
+                            <form onSubmit="return checkSearchForm()" method="post" name="searchform" id="searchform" class="searchform themeform" action="/e/search/index.php" >
+                                <input type="text" class="search" name="keyboard" onblur="if(this.value=='')this.value='按回车键搜索...';" onfocus="if(this.value=='按回车键搜索...')this.value='';" value="按回车键搜索..." placeholder="按回车键搜索">
+                                <input type="hidden" value="title" name="show">
+                                <input type="hidden" value="1" name="tempid">
+                                <input type="hidden" value="news" name="tbname">
+                                <input name="mid" value="1" type="hidden">
+                                <input name="dopost" value="search" type="hidden">
+                            </form>
+                        </div>
+                    </div>
+                </li>
+            </div>
+            <div class="navbar-collapse">
+                <ul>
+                    <li class="menu-item current_page_item"><a href="/">首页</a></li>
+                    <li class="menu-item ">
+                        <a href="/index.php/index/list_article/index">奇·趣事</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="/tech/">潮·科技</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="/view/">美·奇迹</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="/food/">趣·美味</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="/life/">会·生活</a>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="/ejml/">二级目录</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item">
+                                <a href="/ejml/ml1/">目录一</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/ejml/ml2/">目录二</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-item ">
+                        <a href="/dlym/">独立页面</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item">
+                                <a href="/dlym/ym1/">页面一</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/dlym/ym2/">页面二</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="/dlym/ym3/">页面三</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="notic">
+        <div class="wrap subnotic"><i class="fa fa-bullhorn"></i>
+            此网站为墨鱼部落格模板演示网站，此处文字请后台修改！    </div>
+    </div>
+</div>

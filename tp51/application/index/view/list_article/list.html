@@ -1,0 +1,50 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="keywords" content="" />
+<meta name="description" content=" " />
+<title>奇·趣事--我的网站</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="__INDEX__/img/favicon.ico" />
+<link rel="stylesheet" type="text/css" media="all" href="__INDEX__/css/style.css" />
+<link rel="stylesheet" type="text/css"  href="__INDEX__/css/font-awesome.min.css"/>
+<script type="text/javascript" src="__INDEX__/jquery.min.js"></script>
+<script type="text/javascript" src="__INDEX__/responsiveslides.min.js"></script>
+<script type="text/javascript" src="__INDEX__/yycm.js"></script>
+</head>
+<body>
+<!--引入头部-->
+{include file="public/header"}
+<div class="wrap">
+  <div class="main">
+    <div class="map1">
+      <span> 当前位置：
+        <a href="/">首页</a>&nbsp;&nbsp;
+        <a href="/funny/">奇·趣事</a>
+      <h1>文章分类：奇·趣事</h1>
+      </span>
+    </div>
+    <!--引入内容-->
+    {include file="public/container"}
+  </div>
+  <!--引入右侧栏-->
+  {include file="public/info"}
+</div>
+<div class="clear"></div>
+<!--引入尾部-->
+{include file="public/footer"}
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ecms064"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+</body>
+</html>

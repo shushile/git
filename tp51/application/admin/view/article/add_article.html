@@ -1,0 +1,110 @@
+{include file="public/header"}
+<script>
+    function sc(){
+        var animateimg = $("#thumbnail").val(); //获取上传的图片名 带//
+        var imgarr=animateimg.split('\\'); //分割
+        var myimg=imgarr[imgarr.length-1]; //去掉 // 获取图片名
+        var houzui = myimg.lastIndexOf('.'); //获取 . 出现的位置
+        var ext = myimg.substring(houzui, myimg.length).toUpperCase();  //切割 . 获取文件后缀
+
+        var file = $('#thumbnail').get(0).files[0]; //获取上传的文件
+        var fileSize = file.size;           //获取上传的文件大小
+        var maxSize = 1048576;              //最大1MB
+        if(ext !='.PNG' && ext !='.GIF' && ext !='.JPG' && ext !='.JPEG' && ext !='.BMP'){
+            alert('文件类型错误,请上传图片类型');
+            return false;
+        }else if(parseInt(fileSize) >= parseInt(maxSize)){
+            alert('上传的文件不能超过3MB');
+            return false;
+        }else{
+            var data = new FormData($('#form1')[0]);
+
+            $.ajax({
+                url: "{:url('Article/add')}",
+                type: 'post',
+                data: data,
+                dataType: 'JSON',
+                cache: false,
+                processData: false,
+                contentType: false
+            }).done(function(res){
+                if(res['isSuccess']){
+                    var result = '';
+                    result += '<img src="' + res['smallimg']  + '" width="100">';
+                    $('#result').html(result);
+                    alert('上传成功');
+                }else{
+                    alert('上传失败');
+                }
+            });
+            return false;
+        }
+    }
+</script>
+<div class="container clearfix">
+    {include file="public/left"}
+    <!--/sidebar-->
+    <div class="main-wrap">
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">作品管理</a><span class="crumb-step">&gt;</span><span>新增作品</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form id="form1" action="/index.php/Admin/Article/add" method="post" enctype="multipart/form-data" role="form">
+                    <table class="insert-tab" width="100%">
+                        <tbody><tr>
+                            <th width="120"><i class="require-red">*</i>分类：</th>
+                            <td>
+                                <select name="cateid" id="catid" class="required">
+                                    <option value="">--请选择--</option>
+                                    {volist name='cate' id='v'}
+                                    <option value="{$v.id}">
+                                        <?php echo str_repeat('--',$v['level']*2),$v['c_name'];?>
+                                    </option>
+                                    {/volist}
+                                </select>
+                            </td>
+                        </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>标题：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="title" size="50" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>作者：</th>
+                                <td><input class="common-text" name="author" size="50" value="" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>缩略图：</th>
+                                <td>
+                                    <input type="file" id="thumbnail" name="smallimg" onchange="sc(this);"/>
+                                    <div id="result"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>内容：</th>
+                                <td><script name="content" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10"></script></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--/main-->
+</div>
+<script type="text/javascript">
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor(‘editor)就能拿到相关实例。
+    UE.getEditor('content',{initialFrameWidth:1000,initialFrameHeight:200,});
+</script>
+</body>
+</html>

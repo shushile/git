@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>博客后台管理系统</title>
+    <link rel="stylesheet" type="text/css" href="__ADMIN__/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__ADMIN__/css/main.css"/>
+    <script type="text/javascript" src="__ADMIN__/js/modernizr.min.js"></script>
+    <script type="text/javascript" src="__ADMIN__/js/jquery-3.2.1.js"></script>
+
+    <!-- 富文本编辑器引用 -->
+    <script type="text/javascript" src="__ADMIN__/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" src="__ADMIN__/ueditor/ueditor.all.min.js"></script>
+    <script type="text/javascript" src="__ADMIN__/ueditor/lang/zh-cn/zh-cn.js"></script>
+
+    <script>
+        function del()
+        {
+            if(confirm("确定要删除吗？"))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="topbar-wrap white">
+    <div class="topbar-inner clearfix">
+        <div class="topbar-logo-wrap clearfix">
+            <h1 class="topbar-logo none"><a href="index.html" class="navbar-brand">后台管理</a></h1>
+            <ul class="navbar-list clearfix">
+                <li><a class="on" href="/index.php/admin/index/index">首页</a></li>
+                <li><a href="/index.php/index" target="_blank">网站首页</a></li>
+            </ul>
+        </div>
+        <div class="top-info-wrap">
+            <ul class="top-info-list clearfix">
+                <li><a href="#">管理员</a></li>
+                <li><a href="#">修改密码</a></li>
+                <li><a href="#">退出</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+{include file="public/header"}
+<div class="container clearfix">
+    {include file="public/left"}
+    <!--/sidebar-->
+    <div class="main-wrap">
+        {include file="public/container"}
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="/index.php/Admin/Article/add"><i class="icon-font"></i>新增作品</a>
+                        <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
+                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                            <th style="text-align:center;">ID</th>
+                            <th style="text-align:center;">标题</th>
+                            <th style="text-align:center;">缩略图</th>
+                            <th style="text-align:center;">点击</th>
+                            <th style="text-align:center;">发布人</th>
+                            <th style="text-align:center;">分类名称</th>
+                            <th style="text-align:center;">更新时间</th>
+                            <th style="text-align:center;">操作</th>
+                        </tr>
+                        {volist name='list' id='article'}
+                        <tr style="text-align:center;">
+                            <td class="tc">
+                                <input name="id[]" value="59" type="checkbox">
+                            </td>
+                            <td>
+                                {$article.id}
+                            </td>
+                            <td>
+                                <a target="_blank" href="#" >
+                                    {$article.title}
+                                </a>
+                            </td>
+                            <td>
+                                <img src="__UPLOADS__/{$article.smallimg}" alt="文章缩略图">
+                            </td>
+                            <td>{$article.click}</td>
+                            <td>{$article.author}</td>
+                            <td>{$article.cate_name}</td>
+                            <td>{$article.renew_date}</td>
+                            <td>
+                                <a class="link-update" href="/index.php/Admin/Article/modify?title={$article.title}&cate_name={$article.cate_name}&id={$article.id}">修改</a>
+                                <a class="link-del" href="/index.php/Admin/Article/delete?id={$article.id}" onclick="return del();">删除</a>
+                            </td>
+                        </tr>
+                        {/volist}
+                    </table>
+                    <div class="list-page">
+                        {$list->render()|raw}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

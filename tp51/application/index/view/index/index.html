@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="keywords" content="" />
+<meta name="description" content=" " />
+<title>个人博客</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="__INDEX__/img/favicon.ico" />
+<link rel="stylesheet" type="text/css" media="all" href="__INDEX__/css/style.css" />
+<link rel="stylesheet" type="text/css"  href="__INDEX__/css/font-awesome.min.css"/>
+<script type="text/javascript" src="__INDEX__/js/jquery.min.js"></script>
+<script type="text/javascript" src="__INDEX__/js/responsiveslides.min.js"></script>
+<script type="text/javascript" src="__INDEX__/js/yycm.js"></script>
+</head>
+<body>
+<!--引入头部-->
+{include file="public/header"}
+<div class="wrap">
+  <div class="main">
+    <div class="screen">
+      <div class="slide_container">
+        <ul class="rslides" id="slider">
+          <li> <a href="http://www.moyublog.com/" target="_blank"><img src="__INDEX__/img/bigpic01.jpg"></a> </li>
+          <li> <a href="http://www.moyublog.com/" target="_blank"><img src="__INDEX__/img/bigpic02.jpg"></a> </li>
+          <li> <a href="http://www.moyublog.com/" target="_blank"><img src="__INDEX__/img/bigpic03.jpg"></a> </li>
+          <li> <a href="http://www.moyublog.com/" target="_blank"><img src="__INDEX__/img/bigpic04.jpg"></a> </li>
+        </ul>
+      </div>
+    </div>
+  <!--引入左侧栏-->
+  {include file="public/container"}
+  </div>
+  <!--引入右侧栏-->
+  {include file="public/info"}
+</div>
+<div class="clear"></div>
+<!--引入尾部-->
+{include file="public/footer"}
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"ecms064"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+  </script>
+</body>
+</html>
