@@ -1,0 +1,21 @@
+{include file="public/header"}
+<div class="container clearfix">
+    {include file="public/left"}
+    <div class="result-content" style="margin-right:auto;margin-left:auto;width:60%;">
+        <b><span style="font-size:16px;background:white;width:100%;">提示</span></b>
+        <hr>
+        <div class="sch_false" style="background:#fceeeb;height:200px;position:relative;">
+            <!--margin:3.5rem 1rem 0 10rem;position:absolute;-->
+            <div style="padding-top:3rem;width:100%;text-align:center;">
+                <image src="__ADMIN__/images/cry.png" alt="错误图片" style="width:3rem;height:3rem;"/>
+            </div>
+            <!--margin:4rem 1rem 0 15rem;position:absolute;-->
+            <div style="width:100%;text-align:center;">
+                <p style="font-size:1.4rem;"><b>{$userInfo['manname']}大佬，您登录超时,请<a href="{:url('Login/login')}">重新登录</a></b></p><br>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

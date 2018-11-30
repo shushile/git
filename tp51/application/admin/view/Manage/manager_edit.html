@@ -1,0 +1,63 @@
+{include file="public/header"}
+<script>
+    $(function(){
+        $('#submit').click(function(){
+            if($('#mg_name').val()==""){
+                $('#mg_name').focus();
+                $('.remark1').html("<b style='color:red;'>请输入管理者名称</b>");
+                return false;
+            }else{
+                alert('修改管理员信息成功');
+            }
+        });
+    });
+</script>
+<div class="container clearfix">
+    {include file="public/left"}
+    <div class="main-wrap">
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="{:url('Manage/edit')}" method="post" role="form">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th width="120"><i class="require-red">*</i>修改工作角色：</th>
+                                <td width="10">
+                                    <select name="mg_role_id" id="mg_role_id" class="required">
+                                        <option value="2">
+                                            <?php echo str_repeat('--',2),'采集员';?>
+                                        </option>
+                                    </select>
+                                </td>
+                                <td></td>
+                            </tr>
+                        <tr>
+                            <th><i class="require-red">*</i>修改管理员名称：</th>
+                            <td>
+                                <input class="common-text required" id="mg_name" name="mg_name" size="50" value="{$result.mg_name}" type="text">
+                            </td>
+                            <td width="150">
+                                <i class="require-red">&nbsp;*</i><span class="remark1">输入管理者名称</span>
+                            </td>
+                            <input class="common-text required" id="mg_id" style="display:none;" name="mg_id" size="50" value="{$result.mg_id}" type="text">
+                        </tr>
+
+                        <tr>
+                            <th></th>
+                            <td>
+                                <input class="btn btn-primary btn6 mr10" id="submit" value="提交" type="submit">
+                                <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                            </td>
+                            <td>
+
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

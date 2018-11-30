@@ -9,7 +9,7 @@ namespace app\admin\controller;
 use think\facade\Request;
 use think\Controller;
 
-class Article extends Controller{
+class Article extends Base{
     public function article(){
         //无限级分类
         $category=controller('CategoryClass','controller');

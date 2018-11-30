@@ -1,0 +1,63 @@
+{include file="public/header"}
+<script>
+    $(function(){
+        $('#submit').click(function(){
+            var pwd = $('#mg_pwd').val();
+            var name = $('#mg_name').val();
+            var rule = /^(\d|[a-zA-Z])+$/;
+
+            if($('#mg_pwd').val()==""){
+                $('#mg_pwd').focus();
+                $('.remark').html("请输入密码");
+                return false;
+            }else if(rule.test(pwd)){
+                $('.remark').html("请输入8-16位由字母、下划线和数字组成的密码");
+                return false;
+            }else if(pwd.length<8 || pwd.length>16){
+                $('.remark').html("请输入8-16位的密码");
+                return false;
+            }else {
+                alert('修改密码成功');
+            }
+        });
+    });
+</script>
+<div class="container clearfix">
+    {include file="public/left"}
+        <div class="main-wrap">
+            <div class="crumb-wrap">
+                <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">作品管理</a><span class="crumb-step">&gt;</span><span>新增作品</span></div>
+            </div>
+            <div class="result-wrap">
+                <div class="result-content">
+                    <form id="form1" action="{:url('Index/chngpwd')}" method="post" role="form">
+                        <table class="insert-tab" width="100%">
+                            <tbody>
+                            <tr>
+                                <th><i class="require-red">*</i>姓名：</th>
+                                <td>
+                                    <input class="common-text required" id="mg_name" disabled="disabled" name="mg_name" size="50" value="<?php echo Session::get('userInfo.manname');?>" type="text">
+                                    <input type="hidden" value="<?php echo Session::get('userInfo.manname');?>" name="mg_name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>更换密码：</th>
+                                <td>
+                                    <input class="common-text" id="mg_pwd" name="mg_pwd" size="50" value="" placeholder="请更换密码" type="password">
+                                    <i class="require-red">&nbsp;*</i><span class="remark">请输入8-16位由字母、下划线和数字组成的密码</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" id="submit" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+    </div>
+</div>

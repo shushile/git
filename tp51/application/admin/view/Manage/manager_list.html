@@ -1,0 +1,53 @@
+{include file="public/header"}
+<div class="container clearfix">
+    {include file="public/left"}
+    <!--/sidebar-->
+    <div class="main-wrap">
+        <div class="result-wrap">
+            <form name="myform" id="myform" method="post">
+                <div class="result-title">
+                    <div class="result-list">
+                        <a href="{:url('Manage/add')}"><i class="icon-font"></i>新增管理员</a>
+                        <a id="batchDel" href="javascript:void(0)"><i class="icon-font"></i>批量删除</a>
+                        <a id="updateOrd" href="javascript:void(0)"><i class="icon-font"></i>更新排序</a>
+                    </div>
+                </div>
+                <div class="result-content">
+                    <table class="result-tab" width="100%">
+                        <tr>
+                            <th class="tc" width="5%"><input class="allChoose" name="" type="checkbox"></th>
+                            <th style="text-align:center;">ID</th>
+                            <th style="text-align:center;">用户名</th>
+                            <th style="text-align:center;">工作</th>
+                            <th style="text-align:center;">操作</th>
+                        </tr>
+                        {volist name="manager" id="m"}
+                        <tr style="text-align:center;">
+                            <td class="tc">
+                                <input name="id[]" value="59" type="checkbox">
+                            </td>
+                            <td>
+                                {$m.mg_id}
+                            </td>
+                            <td>
+                                {$m.mg_name}
+                            </td>
+                            <td>{$m.mg_role_id}</td>
+                            <td>
+                                <a class="link-update" href="{:url('Manage/edit')}?mg_id={$m.mg_id}">修改</a>
+                                <a class="link-del" href="{:url('Manage/delete')}?mg_id={$m.mg_id}" onclick="return del();">删除</a>
+                            </td>
+                        </tr>
+                        {/volist}
+                    </table>
+                    <div class="list-page">
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--/main-->
+</div>
+</body>
+</html>

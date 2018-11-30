@@ -1,0 +1,81 @@
+{include file="public/header"}
+<script>
+    $(function(){
+        $('#submit').click(function(){
+            var pwd = $('#mg_pwd').val();
+            var name = $('#mg_name').val();
+            var rule = /^(\d|[a-zA-Z])+$/;
+
+            if($('#mg_pwd').val()==""){
+                $('#mg_pwd').focus();
+                $('.remark2').html("<b style='color:red;'>请输入密码</b>");
+                return false;
+            }else if(rule.test(pwd)){
+                $('.remark2').html("<b style='color:red;'>请输入8-16位由字母、下划线和数字组成的密码</b>");
+                return false;
+            }else if(pwd.length<8 || pwd.length>16){
+                $('.remark2').html("<b style='color:red;'>请输入8-16位的密码</b>");
+                return false;
+            }else if(name==""){
+                $('#mg_name').focus();
+                $('.remark1').html("<b style='color:red;'>请输入管理者名称</b>");
+                return false;
+            }else {
+                alert('添加管理员成功');
+            }
+        });
+    });
+</script>
+    <div class="container clearfix">
+        {include file="public/left"}
+        <div class="main-wrap">
+            <div class="result-wrap">
+                <div class="result-content">
+                    <form id="form1" action="{:url('Manage/add')}" method="post" role="form">
+                        <table class="insert-tab" width="100%">
+                            <tbody>
+                                <tr>
+                                    <th><i class="require-red">*</i>管理者：</th>
+                                    <td>
+                                        <input class="common-text required" id="mg_name" name="mg_name" size="50" placeholder="请务必填写用户名名称" type="text">
+                                    </td>
+                                    <td>
+                                        <span class="remark1">  <i class="require-red">&nbsp;*</i>输入管理者名称</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>管理者密码：</th>
+                                    <td>
+                                        <input class="common-text" id="mg_pwd" placeholder="请务必填写管理者密码" name="mg_pwd" size="50" type="password">
+                                    </td>
+                                    <td>
+                                        <span class="remark2">  <i class="require-red">&nbsp;*</i>请输入8-16位由字母、下划线和数字组成的密码</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th><i class="require-red">*</i>分配工作：</th>
+                                    <td>
+                                        <select name="mg_role_id" style="width:15%;align:center;">
+                                            <option value="1">经理</option>
+                                        </select>
+                                    </td>
+                                    <td>
+                                        <span class="remark3"> <i class="require-red">&nbsp;*</i>选择分配工作</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <td>
+                                        <input class="btn btn-primary btn6 mr10" id="submit" value="提交" type="submit">
+                                        <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

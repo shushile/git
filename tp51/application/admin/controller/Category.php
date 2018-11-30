@@ -9,7 +9,7 @@ namespace app\admin\controller;
 use think\facade\Request;
 use think\Controller;
 
-class Category extends Controller{
+class Category extends Base{
     public function index(){
         //无限级分类
         $category=controller('CategoryClass','controller');
