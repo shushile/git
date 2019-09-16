@@ -1,0 +1,14 @@
+{
+    "name": "topthink/think",
+    "description": "test project",
+    "type": "project",
+    "license": "mit",
+    "authors": [
+        {
+            "name": "何俊新",
+            "email": "947960547@qqq.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
