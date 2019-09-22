@@ -10,5 +10,8 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "gregwar/captcha": "dev-master",
+        "topthink/think-image": "dev-master"
+    }
 }
